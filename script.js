@@ -2,7 +2,9 @@
 let myLibrary = [];
 //Book Constructor which creates book objects//
 function Book() {
-    // the constructor...
+    this.title = " ";
+    this.author = " ";
+    this.totalPages = " ";
   }
 //Function to add book to the library//
 function addBookToLibrary() {
