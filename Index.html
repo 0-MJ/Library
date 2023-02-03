@@ -16,15 +16,20 @@
        </nav>
     </header>
 <main>
-  <section>
-    <form id ="bookForm">
-
+  <section id="addNewBook">
+    <h2>Add New Book</h2>
+    <form>
+        <input type="text" placeholder="Title" id="title"/>
+        <input type="text" placeholder="Author" id="author"/>
+        <input type="number" placeholder="Pages" id="pages">
+      <input type="reset" id="reset">
+     <button type="submit" id="add">Add</button>
     </form>
 
   </section>
   <section id ="book-library">
     <div class="booksGrid">
-        <div class="bookTemp">
+        <div class="bookTemp" id="book1">
         <dl>
             <dt>Title:</dt>
             <dd> How to watch football</dd>
@@ -33,10 +38,10 @@
             <dt>Total pages:</dt>
             <dd>217</dd>
         </dl> 
-        <button id="read">Read</button>
+        <button id="status">Read</button>
         <button id="remove">Remove</button> 
         </div>
-        <div class="bookTemp">
+        <div class="bookTemp" id="book2">
           <dl>
               <dt>Title:</dt>
               <dd> How to watch football</dd>
@@ -45,7 +50,7 @@
               <dt>Total pages:</dt>
               <dd>217</dd>
           </dl> 
-          <button id="read">Read</button>
+          <button id="status">Read</button>
           <button id="remove">Remove</button> 
           </div>
     </div>

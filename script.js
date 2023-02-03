@@ -25,8 +25,34 @@ myLibrary.forEach(function(books){
 })
 
 //New Book button that brings up a form for users to input the details for the newbook//
+let newBook = document.getElementById('newBook');
+let addNewBookForm = document.getElementById('addNewBook');
 
+// Show the form as a modal when the new book button is pressed//
+newBook.addEventListener('click', function() {
+  addNewBookForm.style.display = 'block';
+});
+//Store the detail from the form the form in different variables to use as parameters in object constructor when the add button is pressed//
+let title = document.getElementById('title');
+let author = document.getElementById('author');
+let pages = document.getElementById('pages');
+let addButton = document.getElementById('add');
+console.log(title.textContent);
+addButton.addEventListener('click',function(){
+  event.preventDefault(); // Prevent the form from submitting
+  console.log("Title : " + title.value,"Author : " + author.value,"Pages : "+pages.value);
+  addNewBookForm.style.display = 'none';// To hide the form after taking the input data//
 
+});
 //A button to remove the book from the library on each book.//
+let removeBtn = document.getElementById('remove');
+removeBtn.addEventListener("click",function(){
+  
+});
 
 //A button to change  read status on each book's Display//
+let statusButton = document.getElementById('status');
+statusButton.addEventListener("click",function(){
+this.textContent = "Unread";
+this.style.backgroundColor = "rgb(210, 97, 97)";
+});

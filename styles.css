@@ -19,55 +19,115 @@ nav{
     margin: 5px;
     height: 50px;
     border-radius: 10px;
+   
 }
 #newBook:hover {
-    background-color: rgb(231, 181, 138);  
+    background-color: rgb(185, 183, 183);
 }
 
 #newBook:active{
-    background-color: rgb(213, 128, 53);;
-    box-shadow: 0 5px #666;
+    background-color: rgb(147, 144, 144);
+    box-shadow: 0 5px rgb(61, 61, 61);
     transform: translateY(4px); 
 }
 
-.booksGrid{
+
+#addNewBook  {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 40%;
+        border-radius:10px;
+        box-shadow: 2px 2px 10px #ccc;
+        text-align: center;
+        width: 300px;
+        height: 500px;
+        
+      }
+    
+  #addNewBook,h2{
+    background-color:#5a5959;
+  }
+#title,#author,#pages{
+    border-radius: 5px;
+    
+    height: 40px;
+    font-size: larger;
+}
+
+#reset{
+    height: 50px;
+    font-size: larger;
+    background-color: rgb(206, 104, 104);
+    border-radius: 7px;
+}
+#reset:hover {
+    background-color: rgb(204, 76, 56);  
+}
+
+#add{
+    height: 50px;
+    font-size: larger;
+    background-color: rgb(72, 164, 72);
+    border-radius: 7px;
+}
+#add:hover {
+    background-color: rgb(7, 136, 13);  
+}
+
+  #addNewBook form {
+    background-color: rgb(88,88,88);
+    padding: 10px;
+    border: 1px solid #888;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    gap: 10px;
+    
+  }
+  .booksGrid{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: var(--spacing-xl);
     margin: 10px;
-    border: 3px solid black;
+    border-radius: 10px;
     background-color: rgb(156, 162, 167);
 }
 
 .bookTemp{
     margin: 5px;
-    border: 3px solid black;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     padding: 5px;
     gap: 5px;
     width: 200px;
-    background-color: bisque;
+    background-color: rgb(80,80,80);
 }
 
 dl,dt,dd{
-   background-color: bisque;
+   background-color: rgb(222, 218, 213);
+  
+   
 }
 
-dl{
-    border: 3px solid black;
+dt{
+    font-size: large;
+    font-weight: bolder;
 }
 
-#read{
+dd{
+    font-weight: bold;
+}
+
+#status{
 background-color: rgb(72, 181, 72);
+border-radius: 10px;
 }
 
 #remove{
     background-color: rgb(210, 97, 97);
+    border-radius: 10px;
 }
-
-#book-grid{
-  background-color: rgb(156, 162, 167);
-}
-
-
