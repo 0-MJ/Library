@@ -17,12 +17,25 @@ addBookToLibrary(book2);
 //Function to add book to the library//
 function addBookToLibrary(book) {
     myLibrary.push(book);
+    display(myLibrary);
+
+  }
+  
+//A function to Loop through the myLibrary array and displays each book on the page.//
+function display(library) {
+  console.log(library);
+
+  // Loop through the books array//
+  for (const book of library) {
+  // Get the section element to which the divs will be added//
+  let booksGrid = document.getElementById("booksGrid");
+    console.log('Title: ' + book.title);
+    console.log('Author: ' + book.author);
+    console.log('Pages: ' + book.pages);
   
   }
-//A function to Loop through the myLibrary array and displays each book on the page.//
-myLibrary.forEach(function(books){
-  console.log(books);
-})
+}
+
 
 //New Book button that brings up a form for users to input the details for the newbook//
 let newBook = document.getElementById('newBook');
@@ -33,16 +46,15 @@ newBook.addEventListener('click', function() {
   addNewBookForm.style.display = 'block';
 });
 //Store the detail from the form the form in different variables to use as parameters in object constructor when the add button is pressed//
-let title = document.getElementById('title');
-let author = document.getElementById('author');
-let pages = document.getElementById('pages');
+let titleValue = document.getElementById('title');
+let authorValue = document.getElementById('author');
+let pagesValue = document.getElementById('pages');
 let addButton = document.getElementById('add');
-console.log(title.textContent);
 addButton.addEventListener('click',function(){
   event.preventDefault(); // Prevent the form from submitting
-  console.log("Title : " + title.value,"Author : " + author.value,"Pages : "+pages.value);
+  let book = new Book(titleValue.value, authorValue.value, pagesValue.value);
+  addBookToLibrary(book);
   addNewBookForm.style.display = 'none';// To hide the form after taking the input data//
-
 });
 //A button to remove the book from the library on each book.//
 let removeBtn = document.getElementById('remove');
