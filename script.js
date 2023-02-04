@@ -6,27 +6,18 @@ function Book(title,author,pages) {
     this.author = author;
     this.pages = pages;
   }
-//Test book//
-let book1 = new Book('Animal Farm','George Orwell',
-104);
- addBookToLibrary(book1);
-
 //Function to add book to the library//
 function addBookToLibrary(book) {
+ 
     myLibrary.push(book);
     display(myLibrary);
-
+    myLibrary = [];
   }
   
 //A function to Loop through the myLibrary array and displays each book on the page.//
 function display(library) {
-  console.log(library);
-
-  // Loop through the books array//
-  for (const book of library) {
-    console.log('Title: ' + book.title);
-    console.log('Author: ' + book.author);
-    console.log('Pages: ' + book.pages);
+// Loop through the books array//
+  for (let book of library) {
     //Select the element in which the the books are to be displayed
     let booksGrid = document.getElementById('booksGrid');
     //Create a new div element//
@@ -59,11 +50,33 @@ function display(library) {
     dl.appendChild(ddPages);
     // Append the description list to the new div
     bookTemp.appendChild(dl);
-    // Append the new div to the booksGrid
+    // Append bookTemp to the booksGrid
     booksGrid.appendChild(bookTemp);
-  }
+    //A button to change read status on each book's Display//
+    let statusButton = document.createElement("button");
+    bookTemp.appendChild(statusButton);
+    // Set the class attribute for the statusButton
+    statusButton.setAttribute("id", "status");
+    statusButton.textContent = "unread";
+    statusButton.addEventListener("click",function(){
+      if(statusButton.textContent === "unread"){
+        statusButton.textContent = "read";
+        statusButton.style.background = 'rgb(72, 181, 72)';
+      }else {
+        statusButton.textContent = "unread";
+        statusButton.style.background = 'rgb(210, 97, 97)';
+      } 
+    });
+    //A button to remove the book from the library on each book.//
+    let removeButton = document.createElement("button");
+    removeButton.setAttribute("id","remove")
+    removeButton.textContent="Remove";
+    bookTemp.appendChild(removeButton)
+    removeButton.addEventListener("click",function(){
+    bookTemp.remove();
+  });
+ }
 }
-
 
 //New Book button that brings up a form for users to input the details for the newbook//
 let newBook = document.getElementById('newBook');
@@ -84,10 +97,3 @@ addButton.addEventListener('click',function(){
   addBookToLibrary(book);
   addNewBookForm.style.display = 'none';// To hide the form after taking the input data//
 });
-//A button to remove the book from the library on each book.//
-let removeBtn = document.getElementById('remove');
-removeBtn.addEventListener("click",function(){
-  
-});
-
-//A button to change read status on each book's Display//

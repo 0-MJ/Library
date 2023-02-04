@@ -123,11 +123,13 @@ dd{
 }
 
 #status{
-background-color: rgb(72, 181, 72);
+background-color:rgb(210, 97, 97) ;
 border-radius: 10px;
+height: 20px;
 }
 
 #remove{
     background-color: rgb(210, 97, 97);
     border-radius: 10px;
+    height: 20px;
 }
