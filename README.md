@@ -5,8 +5,3 @@
 - Add new books to the library
 - Remove books from the library
 - Mark books as read or unread
-
-## Technology Used
-HTML
-CSS
-JavaScript
