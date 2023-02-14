@@ -1,5 +1,5 @@
 ## Part of the odin project curriculum
-## A simple Libtrary  Management System 
+# A simple Libtrary Management System 
 ## Features
 - Display books stored in the library
 - Add new books to the library
